@@ -1,5 +1,5 @@
 name: Deploy Azure CI
- 
+
 on:     
   workflow_dispatch:
     inputs:
@@ -17,9 +17,8 @@ on:
 jobs:
   build-push:
     name: azr-build-push
-    runs-on: [self-hosted, Linux, X64] 
-    environment: production
- 
+    runs-on: ubuntu-latest  # self-hosted에서 기본 GitHub 서버로 변경
+
     steps:
     - name: Check out the repo
       uses: actions/checkout@v4
@@ -53,6 +52,4 @@ jobs:
         push: true
         file: ./Dockerfile
         platforms: linux/amd64
-        #build-args: |
-        #  WHATAP_HOST: ${{ secrets.WHATAP_HOST }}
         tags: ${{ secrets.AZURE_URL }}/${{ steps.meta.outputs.tags }}
