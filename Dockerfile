@@ -22,7 +22,8 @@ COPY --from=build /app/.nuxt ./.nuxt
 COPY --from=build /app/package*json ./
  
 # Install production dependencies only
-RUN npm install --only=production
+# RUN npm install --only=production
+RUN npm install
  
 # Set environment variables
 #ENV HOST=0.0.0.0
