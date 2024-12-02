@@ -1,4 +1,4 @@
-name: Deploy Azure CI
+name: Deploy Azure CI2
 
 on:     
   workflow_dispatch:
