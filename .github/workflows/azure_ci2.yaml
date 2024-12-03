@@ -26,9 +26,9 @@ jobs:
     - name: Log in to Docker Hub
       uses: azure/docker-login@v1
       with:
-        login-server: ${{ secrets.AZURE_URL2 }}
-        username: ${{ secrets.ACR_USERNAME2 }}
-        password: ${{ secrets.ACR_PASSWORD2 }}
+        login-server: ${{ secrets.AZURE_URL_T }}
+        username: ${{ secrets.ACR_USERNAME_T }}
+        password: ${{ secrets.ACR_PASSWORD_T }}
        
     - name: Setup timezone
       uses: zcong1993/setup-timezone@master
